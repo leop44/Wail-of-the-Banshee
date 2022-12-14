@@ -6,9 +6,13 @@ public class FPSController : MonoBehaviour
     private float movSpeed = 10f;
     private float rotSpeed = 10f;
     private Vector3 velocity;
-    private new Transform camera;
+    public new Transform camera;
     private float h;
     private float v;
+    private bool getObj;
+
+    [Header("Interactable Objetcs")]
+    public GameObject pB;
 
     private void Start()
     {
@@ -16,6 +20,7 @@ public class FPSController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         rb = GetComponent<Rigidbody>();
+        getObj = false;
     }
 
     private void Update()
@@ -41,6 +46,20 @@ public class FPSController : MonoBehaviour
             angle = Mathf.Clamp(angle, -80, 80);
             camera.localEulerAngles = Vector3.right * angle;
         }
+
+        var rayDistance = 5f;
+        RaycastHit hitInfo;
+        Debug.DrawRay(camera.position, camera.forward * rayDistance, Color.red);
+
+        if (Physics.Raycast(camera.position, camera.forward, out hitInfo, rayDistance, LayerMask.GetMask("Interactable"))) 
+        {
+            getObj = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) && getObj) 
+        {
+            pB.SetActive(false);
+        }
     }
 
     private void FixedUpdate()
@@ -53,4 +72,6 @@ public class FPSController : MonoBehaviour
         velocity.y = rb.velocity.y;
         rb.velocity = velocity;
     }
+
+
 }
