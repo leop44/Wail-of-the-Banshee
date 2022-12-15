@@ -9,10 +9,9 @@ public class FPSController : MonoBehaviour
     public new Transform camera;
     private float h;
     private float v;
-    private bool getObj;
 
-    [Header("Interactable Objetcs")]
-    public GameObject pB;
+
+
 
     private void Start()
     {
@@ -20,7 +19,7 @@ public class FPSController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         rb = GetComponent<Rigidbody>();
-        getObj = false;
+
     }
 
     private void Update()
@@ -53,13 +52,10 @@ public class FPSController : MonoBehaviour
 
         if (Physics.Raycast(camera.position, camera.forward, out hitInfo, rayDistance, LayerMask.GetMask("Interactable"))) 
         {
-            getObj = true;
+
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && getObj) 
-        {
-            pB.SetActive(false);
-        }
+
     }
 
     private void FixedUpdate()

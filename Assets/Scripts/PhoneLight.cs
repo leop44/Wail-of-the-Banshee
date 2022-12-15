@@ -6,7 +6,7 @@ public class PhoneLight : MonoBehaviour
     public Light phoneLight;
     private bool activeLight;
     private float amountBattery = 100f;
-    private float batteryLoss = 10f;
+    private float batteryLoss = 0.1f;
     public GameObject objLight;
 
     
