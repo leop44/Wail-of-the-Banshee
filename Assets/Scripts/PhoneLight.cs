@@ -59,4 +59,4 @@ public class PhoneLight : MonoBehaviour
             getPB = false;
         }
     }
-}
+}//SI LA BATERIA SE TERMINA Y AGARRAMOS MAS CARGA.. NO ENCIENDE Y LA BATERIA COMIENZA A AGOTARSE
