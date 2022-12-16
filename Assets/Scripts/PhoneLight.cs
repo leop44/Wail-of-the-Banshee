@@ -3,20 +3,18 @@ using TMPro;
 
 public class PhoneLight : MonoBehaviour
 {
+    [Header("Logic")]
     public Light phoneLight;
-    private bool activeLight;
-    private float amountBattery = 100f;
-    private float batteryLoss = 0.1f;
+    public bool activeLight;
+    public float amountBattery = 100f;
+    public float batteryLoss = 1f;
     public GameObject objLight;
-
-    
+    static public bool getPB;
 
     [Header("Visuals")]
     public TextMeshProUGUI percentage;
     public GameObject fullCharge;
     public GameObject needCharge;
-
-
 
     private void Start()
     {
@@ -24,9 +22,12 @@ public class PhoneLight : MonoBehaviour
         fullCharge.SetActive(true);
 
     }
+
     private void Update()
     {
-        amountBattery = Mathf.Clamp(amountBattery, 0, 100);
+        var batMax = 100f;
+        var batMin = 0f;
+        amountBattery = Mathf.Clamp(amountBattery, batMin, batMax);
         int batteryValue = (int)amountBattery;
         percentage.text = batteryValue.ToString();
 
@@ -52,7 +53,10 @@ public class PhoneLight : MonoBehaviour
         
         if(amountBattery == 0) objLight.SetActive(false);
 
-
-
+        if (getPB == true) 
+        {
+            amountBattery += 50f;
+            getPB = false;
+        }
     }
 }

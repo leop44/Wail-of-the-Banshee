@@ -5,14 +5,14 @@ public class CharController : MonoBehaviour
     public CharacterController controller;
 
     [Header("Movement")]
-    [SerializeField] float walkSpeed = 6.0f;
-    [SerializeField] float runSpeed = 10.0f;
-    [SerializeField] float gravity = 20.0f;
+    float walkSpeed = 6.0f;
+    float runSpeed = 10.0f;
+    float gravity = 20.0f;
 
     [Header("Camera Rotation")]
     public Camera cam;
-    [SerializeField] float mouseH = 3.0f;
-    [SerializeField] float mouseV = 2.0f;
+    float mouseH = 3.0f;
+    float mouseV = 2.0f;
     float h_mouse, v_mouse;
 
     private Vector3 move = Vector3.zero;

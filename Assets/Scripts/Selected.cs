@@ -3,9 +3,10 @@ using UnityEngine;
 public class Selected : MonoBehaviour
 {
     LayerMask mask;
-    [SerializeField] float distance = 1.5f;
+    float distance = 5f;
     public Animator door;
     private bool doorZone;
+    private bool activeDoor;
 
     private void Start()
     {
@@ -30,10 +31,11 @@ public class Selected : MonoBehaviour
             {
                 doorZone = true;
             }
-            if (Input.GetKeyDown(KeyCode.T)) 
+            if (Input.GetKeyDown(KeyCode.T) && doorZone == true) 
             {
-                if (doorZone == true) door.SetBool("activateDoor", true);
-                if (doorZone == false) door.SetBool("activateDoor", false);
+                activeDoor = !activeDoor;
+                if (activeDoor == true) door.SetBool("activateDoor", true);
+                if (activeDoor == false) door.SetBool("activateDoor", false);
             }
         }
     }
