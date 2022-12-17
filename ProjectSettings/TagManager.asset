@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Interactable
   - Door
+  - PowerBank
+  - Chalk
+  - Pentagram
   layers:
   - Default
   - TransparentFX
