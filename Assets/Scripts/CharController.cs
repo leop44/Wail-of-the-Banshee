@@ -5,8 +5,8 @@ public class CharController : MonoBehaviour
     public CharacterController controller;
 
     [Header("Movement")]
-    float walkSpeed = 6.0f;
-    float runSpeed = 10.0f;
+    float walkSpeed = 10.0f;
+    float runSpeed = 15.0f;
     float gravity = 20.0f;
 
     [Header("Camera Rotation")]

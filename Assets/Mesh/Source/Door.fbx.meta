@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 26c19fc5f31cd164db16b5c8f95bfc8a
+guid: beaaad5ea9faad14580b63fe045d82d3
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Windows
-    second: {fileID: 2100000, guid: 66f3165a650711a4abde648542be6a9a, type: 2}
+      name: Door
+    second: {fileID: 2100000, guid: 16cbdb3ee646e9646b31fc36c6daea79, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Manija
+    second: {fileID: 2100000, guid: 71b654f460892804490b9cfb47b7935d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

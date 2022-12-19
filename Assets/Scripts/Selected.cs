@@ -4,7 +4,7 @@ public class Selected : MonoBehaviour
 {
     [Header("RayCast")]
     LayerMask mask;
-    float distance = 5f;
+    float distance = 10f;
 
     [Header("Door")]
     public Animator door;
