@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 4ffd6c2384a40d342bc9bb04c41edb60
+guid: 4d3f030115fd3f24eaf76e3157138daf
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Nevera
+    second: {fileID: 2100000, guid: 33786c73768127a4dab970220669c310, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

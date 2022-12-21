@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 4ffd6c2384a40d342bc9bb04c41edb60
+guid: dc5d4497319dc024495d1172480a285c
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Old_Dusty_Bookshelf_Mat
+    second: {fileID: 2100000, guid: cb2f5625429edfb43b77684ced959249, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

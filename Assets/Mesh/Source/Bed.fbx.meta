@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: 4ffd6c2384a40d342bc9bb04c41edb60
+guid: 155e6d54a0e45ed419f8a83e6d7b1971
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Almohada
+    second: {fileID: 2100000, guid: 4d2f354db4cd9e64b8b32d3a2bc10e59, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cama
+    second: {fileID: 2100000, guid: 249c82deb4c400345a34418e665f5249, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sabana-azul
+    second: {fileID: 2100000, guid: d0480dc4f08f1f94b82021c8e145ebf8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

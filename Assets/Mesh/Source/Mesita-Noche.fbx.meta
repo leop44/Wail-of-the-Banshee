@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: 4ffd6c2384a40d342bc9bb04c41edb60
+guid: e85d065b5a26ec04387aa345e9125c2a
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MEsita
+    second: {fileID: 2100000, guid: f27be353916fbd841b925540973a380e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesita tapa
+    second: {fileID: 2100000, guid: e3fdbd18ad4296f4882479bc3bdf010b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mesita noche
+    second: {fileID: 2100000, guid: 8e92e7e8873be164c8a19891f0f336a6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

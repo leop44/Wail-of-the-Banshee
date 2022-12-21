@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 4ffd6c2384a40d342bc9bb04c41edb60
+guid: 430b77dae17401645b86c1a5a081c7da
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vela base
+    second: {fileID: 2100000, guid: e3613adb7994a34478fa3f2d1bc770d3, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

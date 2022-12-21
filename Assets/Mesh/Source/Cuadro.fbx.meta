@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 4ffd6c2384a40d342bc9bb04c41edb60
+guid: 5aa6511f67d8c7b4fa642ba183015400
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cuadro
+    second: {fileID: 2100000, guid: b53ed9a29cbad6c4da2e70a0a7291378, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

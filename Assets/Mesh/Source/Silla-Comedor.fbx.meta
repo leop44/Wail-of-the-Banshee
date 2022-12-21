@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 4ffd6c2384a40d342bc9bb04c41edb60
+guid: 8b232eb3d004b50469b498194a9376ca
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: silla
+    second: {fileID: 2100000, guid: 66f3165a650711a4abde648542be6a9a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
