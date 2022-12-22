@@ -6,10 +6,6 @@ public class Selected : MonoBehaviour
     LayerMask mask;
     float distance = 10f;
 
-    [Header("Door")]
-    public Animator door;
-    private bool activeDoor;
-
     [Header("Interactable Text")]
     public GameObject textDetectE;
     public GameObject textDetectF;
@@ -20,6 +16,8 @@ public class Selected : MonoBehaviour
     public GameObject chalkUI;
     public GameObject pentagramOn;
     public GameObject pentagramOff;
+
+
 
     private void Awake()
     {
@@ -63,13 +61,16 @@ public class Selected : MonoBehaviour
                 chalkUI.SetActive(true);
             }
 
-            if (hit.collider.tag == "Door")
+            if (hit.collider.tag == "Door") 
+            {
+            
+            }
+
+            if (hit.collider.tag == "Gabinete")
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    activeDoor = !activeDoor;
-                    if (activeDoor == true) door.SetBool("activateDoor", true);
-                    if (activeDoor == false) door.SetBool("activateDoor", false);
+                    hit.collider.transform.GetComponent<Cajon>().AbreCierra();
                 }
             }
 
