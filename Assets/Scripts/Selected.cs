@@ -5,10 +5,8 @@ public class Selected : MonoBehaviour
     [Header("RayCast")]
     LayerMask mask;
     float distance = 10f;
-
-    [Header("Interactable Text")]
-    public GameObject textDetectE;
-    public GameObject textDetectF;
+    public GameObject cursor;
+    public GameObject cursor2;
     private bool lookInt;
 
     [Header("Chalk")]
@@ -19,17 +17,18 @@ public class Selected : MonoBehaviour
 
 
 
+
     private void Awake()
     {
         chalkUI.SetActive(false);
         pentagramOff.SetActive(true);
         pentagramOn.SetActive(false);
+        cursor2.SetActive(false);
     }
 
     private void Start()
     {
         mask = LayerMask.GetMask("RaycastDetect");
-        textDetectE.SetActive(false);
         lookInt = false;
     }
 
@@ -56,6 +55,14 @@ public class Selected : MonoBehaviour
                 }
             }
 
+            if (hit.collider.tag == "Ring")
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    hit.collider.transform.GetComponent<TakeObj>().LePrincipio();
+                }
+            }
+
             if (getChalk == true)
             {
                 chalkUI.SetActive(true);
@@ -63,15 +70,7 @@ public class Selected : MonoBehaviour
 
             if (hit.collider.tag == "Door") 
             {
-            
-            }
 
-            if (hit.collider.tag == "Gabinete")
-            {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    hit.collider.transform.GetComponent<Cajon>().AbreCierra();
-                }
             }
 
             if (hit.collider.tag == "Pentagram")
@@ -93,11 +92,13 @@ public class Selected : MonoBehaviour
     {
         if (lookInt == true)
         {
-            textDetectE.SetActive(true); 
+            cursor2.SetActive(true);
+            cursor.SetActive(false);
         }
         else
         {
-            textDetectE.SetActive(false);
+            cursor2.SetActive(false);
+            cursor.SetActive(true);
         }
     }
 }
