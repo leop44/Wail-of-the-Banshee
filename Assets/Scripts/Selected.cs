@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Selected : MonoBehaviour
 {
+    private SoundManager soundManager;
+
     [Header("RayCast")]
     LayerMask mask;
     float distance = 10f;
@@ -14,12 +16,22 @@ public class Selected : MonoBehaviour
     public GameObject chalkUI;
     public GameObject pentagramOn;
     public GameObject pentagramOff;
+    bool puedeMorir;
+
+    [Header("Ring")]
+    static public bool getRing;
+
+    [Header("Pista")]
+    static public bool getPista;
+    public GameObject pista;
+    public bool lookPista;
 
 
 
 
     private void Awake()
     {
+        soundManager = FindObjectOfType<SoundManager>();
         chalkUI.SetActive(false);
         pentagramOff.SetActive(true);
         pentagramOn.SetActive(false);
@@ -30,6 +42,8 @@ public class Selected : MonoBehaviour
     {
         mask = LayerMask.GetMask("RaycastDetect");
         lookInt = false;
+        getPista = false;
+        lookPista = false;
     }
 
     private void Update()
@@ -52,6 +66,15 @@ public class Selected : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     hit.collider.transform.GetComponent<TakeChalk>().Deactivate();
+                    puedeMorir = true;
+                }
+            }
+
+            if (hit.collider.tag == "Pista")
+            {
+                if (Input.GetKeyUp(KeyCode.E))
+                {
+                    hit.collider.transform.GetComponent<Pista>().Deactivate();
                 }
             }
 
@@ -59,7 +82,7 @@ public class Selected : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    hit.collider.transform.GetComponent<TakeObj>().LePrincipio();
+                    hit.collider.transform.GetComponent<GetRing>().Deactivate();
                 }
             }
 
@@ -69,9 +92,6 @@ public class Selected : MonoBehaviour
             }
 
             if (hit.collider.tag == "Door") 
-            {
-
-            }
 
             if (hit.collider.tag == "Pentagram")
             {
@@ -85,6 +105,24 @@ public class Selected : MonoBehaviour
             }
         }
         else lookInt = false;
+
+        if (getPista == true)
+        {
+            pista.SetActive(true);
+            lookPista = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) && lookPista == true)
+        {
+            pista.SetActive(false);
+            getPista = false;
+        }
+
+        if (puedeMorir == true) 
+        {
+            soundManager.SeleccionAudio(1, 0.9f);
+            puedeMorir = false;
+        }
     }
 
 

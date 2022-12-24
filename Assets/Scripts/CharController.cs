@@ -9,6 +9,7 @@ public class CharController : MonoBehaviour
     float runSpeed = 15.0f;
     float gravity = 20.0f;
 
+
     [Header("Camera Rotation")]
     public Camera cam;
     float mouseH = 3.0f;
@@ -16,6 +17,8 @@ public class CharController : MonoBehaviour
     float h_mouse, v_mouse;
 
     private Vector3 move = Vector3.zero;
+
+
 
     private void Start()
     {
@@ -37,13 +40,28 @@ public class CharController : MonoBehaviour
         {
             move = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
 
-            if (Input.GetKey(KeyCode.LeftShift)) move = transform.TransformDirection(move) * runSpeed;
 
-            else move = transform.TransformDirection(move) * walkSpeed;
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                move = transform.TransformDirection(move) * runSpeed;
+
+
+            }
+
+            else 
+            {
+                move = transform.TransformDirection(move) * walkSpeed;
+
+
+            }
         }
+
+
+
         move.y -= gravity * Time.deltaTime;
 
         controller.Move(move * Time.deltaTime);
     }
 
 }
+

@@ -12,8 +12,5 @@ public class TakeObj : MonoBehaviour
         PhoneLight.getPB = true;
     }
 
-    public void LePrincipio() 
-    {
-        ring.SetActive(false);
-    }
+
 }

@@ -2,14 +2,19 @@ using UnityEngine;
 
 public class Changes : MonoBehaviour
 {
+    public float timerScreem = 10f;
 
-    public void Temp()
+    private void Update()
     {
-        Invoke("DebugTest", 4);
+        timerScreem -= Time.deltaTime;
+        if (timerScreem <= 0)
+        {
+            Debug.Log("MESSI SIIIUUU");
+            timerScreem = 0;
+        }
     }
 
-    void DebugTest() 
-    {
-        Debug.Log("Messi que mas aplauda le traigo le traigo le traigo la BANSHEE");
-    }
+
+
+
 }
