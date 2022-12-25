@@ -12,11 +12,14 @@ public class Selected : MonoBehaviour
     private bool lookInt;
 
     [Header("Chalk")]
-    static public bool getChalk;
+     public bool getChalk;
     public GameObject chalkUI;
     public GameObject pentagramOn;
     public GameObject pentagramOff;
     bool puedeMorir;
+    public bool conditionWin01 = false;
+    public bool conditionWin02 = false;
+    static public bool canWin = false;
 
     [Header("Ring")]
     static public bool getRing;
@@ -25,6 +28,8 @@ public class Selected : MonoBehaviour
     static public bool getPista;
     public GameObject pista;
     public bool lookPista;
+
+
 
 
 
@@ -66,7 +71,9 @@ public class Selected : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     hit.collider.transform.GetComponent<TakeChalk>().Deactivate();
+                    getChalk = true;
                     puedeMorir = true;
+                    conditionWin01 = true;
                 }
             }
 
@@ -77,6 +84,7 @@ public class Selected : MonoBehaviour
                     hit.collider.transform.GetComponent<Pista>().Deactivate();
                 }
             }
+
 
             if (hit.collider.tag == "Ring")
             {
@@ -101,6 +109,7 @@ public class Selected : MonoBehaviour
                     pentagramOn.SetActive(true);
                     chalkUI.SetActive(false);
                     getChalk = false;
+                    conditionWin02 = true;
                 }
             }
         }
@@ -122,6 +131,11 @@ public class Selected : MonoBehaviour
         {
             soundManager.SeleccionAudio(1, 0.9f);
             puedeMorir = false;
+        }
+
+        if (conditionWin01 == true && conditionWin02 == true) 
+        {
+            canWin = true;
         }
     }
 

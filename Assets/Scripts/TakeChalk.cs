@@ -7,6 +7,6 @@ public class TakeChalk : MonoBehaviour
     public void Deactivate()
     {
         chalk.SetActive(false);
-        Selected.getChalk = true;
+        //Selected.getChalk = true;
     }
 }
