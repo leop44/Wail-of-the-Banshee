@@ -4,14 +4,16 @@ using UnityEngine.Events;
 public class Ring_Start : MonoBehaviour
 {
     [SerializeField] private UnityEvent onTrigger;
-    private float timerScreem = 300f;
+    private float timerScreem = 5f;
     private float timerGO = 5f;
     bool timerCheck;
     bool timerCheck02;
+    bool timerCheck03;
     public GameObject screamer;
     private SoundManager soundManager;
     public GameObject gameOver;
     public GameObject buttonGO;
+    public GameObject fondo;
 
     private void Awake()
     {
@@ -22,6 +24,9 @@ public class Ring_Start : MonoBehaviour
 
     private void Start()
     {
+        timerCheck = false;
+        timerCheck02 = false;
+        timerCheck03 = false;
     }
 
     private void Update()
@@ -33,6 +38,8 @@ public class Ring_Start : MonoBehaviour
             Timer();
         }
         if (timerCheck02 == true) TimerGO();
+
+        if(timerCheck03 == true) MenuGO();
 
 
 
@@ -71,7 +78,15 @@ public class Ring_Start : MonoBehaviour
             buttonGO.SetActive(true);
             timerGO = 0;
             timerCheck02 = false;
+            timerCheck03 = true;
         }
+    }
+
+    void MenuGO() 
+    {
+        screamer.SetActive(false);
+        Time.timeScale = 0f;
+        fondo.SetActive(true);
     }
 
 }

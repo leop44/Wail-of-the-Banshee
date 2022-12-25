@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Selected : MonoBehaviour
@@ -12,10 +13,11 @@ public class Selected : MonoBehaviour
     private bool lookInt;
 
     [Header("Chalk")]
-     public bool getChalk;
+    static public bool getChalk;
     public GameObject chalkUI;
-    public GameObject pentagramOn;
-    public GameObject pentagramOff;
+
+    public GameObject chalk;
+
     bool puedeMorir;
     public bool conditionWin01 = false;
     public bool conditionWin02 = false;
@@ -29,6 +31,8 @@ public class Selected : MonoBehaviour
     public GameObject pista;
     public bool lookPista;
 
+    static public bool llamadaActiva = false;
+
 
 
 
@@ -38,8 +42,6 @@ public class Selected : MonoBehaviour
     {
         soundManager = FindObjectOfType<SoundManager>();
         chalkUI.SetActive(false);
-        pentagramOff.SetActive(true);
-        pentagramOn.SetActive(false);
         cursor2.SetActive(false);
     }
 
@@ -70,10 +72,10 @@ public class Selected : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    hit.collider.transform.GetComponent<TakeChalk>().Deactivate();
                     getChalk = true;
                     puedeMorir = true;
                     conditionWin01 = true;
+                    chalk.SetActive(false);
                 }
             }
 
@@ -99,19 +101,17 @@ public class Selected : MonoBehaviour
                 chalkUI.SetActive(true);
             }
 
-            if (hit.collider.tag == "Door") 
+            if (hit.collider.tag == "Door") { }
 
-            if (hit.collider.tag == "Pentagram")
+            if (hit.collider.tag == "Messi") 
             {
-                if (Input.GetKeyDown(KeyCode.E) && getChalk == true)
+                if (Input.GetKeyDown(KeyCode.E)) 
                 {
-                    pentagramOff.SetActive(false);
-                    pentagramOn.SetActive(true);
-                    chalkUI.SetActive(false);
-                    getChalk = false;
-                    conditionWin02 = true;
+                    soundManager.SeleccionAudio(5, 0.7f);
+                    llamadaActiva = true;
                 }
             }
+
         }
         else lookInt = false;
 
@@ -137,6 +137,8 @@ public class Selected : MonoBehaviour
         {
             canWin = true;
         }
+
+        if (Pentagram.pentagramActive == true) conditionWin02 = true;
     }
 
 
