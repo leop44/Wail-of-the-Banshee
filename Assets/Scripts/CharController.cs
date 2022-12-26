@@ -6,7 +6,7 @@ public class CharController : MonoBehaviour
 
     [Header("Movement")]
     float walkSpeed = 10.0f;
-    float runSpeed = 44.0f;
+    float runSpeed = 15.0f;
     float gravity = 20.0f;
 
 
