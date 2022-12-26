@@ -4,7 +4,7 @@ using UnityEngine.Events;
 public class Ring_Start : MonoBehaviour
 {
     [SerializeField] private UnityEvent onTrigger;
-    private float timerScreem = 5f;
+    private float timerScreem = 600f;
     private float timerGO = 5f;
     bool timerCheck;
     bool timerCheck02;
